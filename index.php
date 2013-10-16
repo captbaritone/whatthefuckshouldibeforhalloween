@@ -261,6 +261,7 @@ $next = $nexts[array_rand($nexts)];
             h2 { font-size: 35px; }
             #next { font-size: 25px; }
             #footer { position: fixed; bottom: 0; width: 100%; text-align: center; margin-bottom: 100px; line-height: 30px; }
+            #github { margin-left: 10px; }
         </style>
     </head>
     <body>
@@ -283,6 +284,10 @@ $next = $nexts[array_rand($nexts)];
         <div id='footer'>
             <!-- Facebook -->
             <div class="fb-like" data-href="http://whatthefuckshouldibeforhalloween.com/" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+
+            <!-- Github -->
+            <iframe id='github' src="http://ghbtns.com/github-btn.html?user=captbaritone&repo=whatthefuckshouldibeforhalloween&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+
 
             <!-- Twitter -->
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://whatthefuckshouldibeforhalloween.com/" data-text="I'm going as a <?php echo $costume; ?> for halloween thanks to">Tweet</a>
