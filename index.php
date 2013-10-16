@@ -65,7 +65,7 @@ $adjectives = array(
 'slutty',
 'steamy',
 'suggestive',
-'titilating',
+'titillating',
 //'hot', // Too literal
 );
 
