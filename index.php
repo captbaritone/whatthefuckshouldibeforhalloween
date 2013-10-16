@@ -383,7 +383,7 @@ $next = $nexts[array_rand($nexts)];
             <div class="fb-like" data-href="http://whatthefuckshouldibeforhalloween.com/" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
 
             <!-- Github -->
-            <iframe id='github' src="http://ghbtns.com/github-btn.html?user=captbaritone&repo=whatthefuckshouldibeforhalloween&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+            <iframe id='github' src="http://ghbtns.com/github-btn.html?user=captbaritone&repo=whatthefuckshouldibeforhalloween&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="83" height="20"></iframe>
 
 
             <!-- Twitter -->
