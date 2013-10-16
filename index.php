@@ -277,23 +277,24 @@ $next = $nexts[array_rand($nexts)];
         <style>
             * { margin: 0; }
             html, body { height: 100%; }
-            body { text-align: center; margin-top: 100px; font-family: Arial, Helvetica, sans-serif; }
+            body { text-align: center; font-family: Arial, Helvetica, sans-serif; }
             a:link, a:visited { color: blue; }
             h1,h2 { margin-bottom: 100px; }
             h1 { font-size: 60px; }
-            h2 { font-size: 35px; }
+            h2 { font-size: 35px; padding-top: 100px; }
             #next { font-size: 25px; }
             #github { margin-left: 10px; }
             .wrapper {
                 min-height: 100%;
                 height: auto !important;
                 height: 100%;
-                margin: 0 auto -375px; /* the bottom margin is the negative value of the footer's height */
+                margin: 0 auto -285px; /* the bottom margin is the negative value of the footer's height plus margin */
             }
             #footer, #push {
-                height: 375px; /* .push must be the same height as .footer */
+                margin-top: 100px; 
+                height: 185px; /* .push must be the same height as .footer */
             }
-            #footer { margin-top: 100px; width: 100%; text-align: center; line-height: 30px; }
+            #footer { width: 100%; text-align: center; line-height: 30px; }
         </style>
     </head>
     <body>
