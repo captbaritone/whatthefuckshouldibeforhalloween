@@ -265,6 +265,38 @@ $noun = $nouns[array_rand($nouns)];
 $adjective = $adjectives[array_rand($adjectives)];
 $costume = mb_strtoupper($adjective . ' ' . $noun);
 
+/**
+ * Spits out links based on the kind of input.
+ *
+ * @param str $word_function
+ *   Whether $string is a adjective or a noun.
+ *
+ * @param str $string
+ *   The word or phrase that should be turned into a link.
+ *
+ * @return str
+ *   A linkified version of the $string param.
+ */
+function linkify($word_function, $string) {
+    $links = array(
+        'google' => '<a href="http://www.google.com/search?q=' . $string . '&tbm=isch">' . mb_strtoupper($string) . '</a>',
+        'dictionary' => '<a href="http://dictionary.reference.com/browse/' . $string . '">' . mb_strtoupper($string) . '</a>',
+    );
+
+    switch ($word_function) {
+        case 'noun':
+        return $links['google'];
+
+    case 'adjective':
+        return $links['dictionary'];
+
+    default:
+        return $string;
+  }
+}
+
+$costume_links = linkify('adjective', $adjective) . ' ' . linkify('noun', $noun);
+
 $prompt = $prompts[array_rand($prompts)];
 $next = $nexts[array_rand($nexts)];
 
@@ -279,6 +311,7 @@ $next = $nexts[array_rand($nexts)];
             html, body { height: 100%; }
             body { text-align: center; font-family: Arial, Helvetica, sans-serif; }
             a:link, a:visited { color: blue; }
+            h1 a:link, h1 a:visited { text-decoration: none; color: black; }
             h1,h2 { margin-bottom: 100px; }
             h1 { font-size: 60px; }
             h2 { font-size: 35px; padding-top: 100px; }
@@ -311,7 +344,7 @@ $next = $nexts[array_rand($nexts)];
         <!-- The actual content -->
         <div class='wrapper'>
             <h2><?php echo $prompt; ?>...</h2>
-            <h1><?php echo $costume; ?></h1>
+            <h1><?php echo $costume_links; ?></h1>
             <a href='.' id='next'><?php echo $next; ?> Give me another idea.</a>
             <div id='push'></div>
         </div>
