@@ -31,6 +31,7 @@ $nexts = array(
 'In these shoes? As if...',
 'Maybe next year.',
 'My mother would never let me.',
+'My sister is already using that costume!',
 'No no, that won\'t do at all.',
 'Not on your life!',
 'That won\'t work with my figure.',
@@ -260,6 +261,7 @@ $nouns = array(
 'purple heart',
 'puzzle piece',
 'radish',
+'rat king',
 'rainbow',
 'red vine',
 'rice cooker',
@@ -350,7 +352,7 @@ $next = $nexts[array_rand($nexts)];
                 margin: 0 auto -285px; /* the bottom margin is the negative value of the footer's height plus margin */
             }
             #footer, #push {
-                margin-top: 100px; 
+                margin-top: 100px;
                 height: 185px; /* .push must be the same height as .footer */
             }
             #footer { width: 100%; text-align: center; line-height: 30px; }
