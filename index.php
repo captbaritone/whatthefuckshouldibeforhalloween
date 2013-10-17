@@ -1,7 +1,7 @@
 <?php
 
 $prompts = array(
-'Here\'s a fuckin idea, go as a',
+'Here\'s a fucking idea, go as a',
 'Be a fucking',
 'Dress up as a fucking',
 'Fuck everything else, go as a',
