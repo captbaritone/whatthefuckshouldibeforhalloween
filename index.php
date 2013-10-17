@@ -1,6 +1,7 @@
 <?php
 
 $prompts = array(
+'1 fuckin idea is to look like a',
 'Be a fucking',
 'Dress up as a fucking',
 'Fuck everything else, go as a',
@@ -26,6 +27,7 @@ $nexts = array(
 'At a work function? No way!',
 'Bummer! Amazon\'s sold out already.',
 'C\'mon, I\'m looking for something original!',
+'Haev you looked in the mirror? You cannot pull that off!',
 'I could never pull that off.',
 'I don\'t have the pieces for that costume.',
 'I don\'t swing that way.',
@@ -85,6 +87,7 @@ $adjectives = array(
 'steamy',
 'suggestive',
 'titillating',
+'trashy',
 'x-rated',
 //'hot', // Too literal
 );
@@ -103,6 +106,7 @@ $nouns = array(
 'Eames Lounger',
 'Fort Knox',
 'George Foreman grill',
+'Goodyear Blimp',
 'Halley\'s Comet',
 'Hammond organ',
 'Hippodrome',
