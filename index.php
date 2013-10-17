@@ -27,7 +27,7 @@ $nexts = array(
 'At a work function? No way!',
 'Bummer! Amazon\'s sold out already.',
 'C\'mon, I\'m looking for something original!',
-'Haev you looked in the mirror? You cannot pull that off!',
+'Have you looked in the mirror? You cannot pull that off!',
 'I could never pull that off.',
 'I don\'t have the pieces for that costume.',
 'I don\'t swing that way.',
