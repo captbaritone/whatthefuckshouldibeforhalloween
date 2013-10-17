@@ -1,7 +1,7 @@
 <?php
 
 $prompts = array(
-'1 fuckin idea is to look like a',
+'Here\'s a fuckin idea, go as a',
 'Be a fucking',
 'Dress up as a fucking',
 'Fuck everything else, go as a',
@@ -27,7 +27,7 @@ $nexts = array(
 'At a work function? No way!',
 'Bummer! Amazon\'s sold out already.',
 'C\'mon, I\'m looking for something original!',
-'Have you looked in the mirror? You cannot pull that off!',
+'Have you seen me? I can\'t pull that off!',
 'I could never pull that off.',
 'I don\'t have the pieces for that costume.',
 'I don\'t swing that way.',
