@@ -238,7 +238,7 @@ $nouns = array(
 'garbage pail',
 'garden hose',
 'ginger snap',
-'girraffe',
+'giraffe',
 'gold ingot',
 'goose lamp',
 'government contract',
