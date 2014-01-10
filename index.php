@@ -421,25 +421,19 @@ $next = $nexts[array_rand($nexts)];
 $request = substr( $_SERVER['REQUEST_URI'],1 );
 $params = explode( "/", $request );
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4ecb675afc62be31e93a4e4c4afb3b42ac93d45
 if($params[0] == 'api')
 {
     $api = new stdClass();
     $api->prompt  = $prompt;
     $api->costume = $costume;
     $api->next    = $next;
-<<<<<<< HEAD
     if($params[1] == 'clean')
     {
         foreach ($api as $key => $value) {
             $api->$key = str_ireplace('fuck', 'f**k', $value);
         }
     }
-=======
->>>>>>> e4ecb675afc62be31e93a4e4c4afb3b42ac93d45
     echo json_encode($api);
     exit;
 }
