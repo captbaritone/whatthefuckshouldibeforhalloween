@@ -428,7 +428,7 @@ if($params[0] == 'api')
     $api->prompt  = $prompt;
     $api->costume = $costume;
     $api->next    = $next;
-    if($params[1] == 'clean')
+    if(isset($params[1]) && $params[1] == 'clean')
     {
         foreach ($api as $key => $value) {
             $api->$key = str_ireplace('fuck', 'f**k', $value);
