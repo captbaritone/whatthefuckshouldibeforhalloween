@@ -418,6 +418,18 @@ $costume = mb_strtoupper($adjective . ' ' . $noun);
 $prompt = $prompts[array_rand($prompts)];
 $next = $nexts[array_rand($nexts)];
 
+$request = substr( $_SERVER['REQUEST_URI'],1 );
+$params = explode( "/", $request );
+
+if($params[0] == 'api')
+{
+    $api = new stdClass();
+    $api->prompt  = $prompt;
+    $api->costume = $costume;
+    $api->next    = $next;
+    echo json_encode($api);
+    exit;
+}
 ?>
 
 <html>
@@ -486,7 +498,7 @@ $next = $nexts[array_rand($nexts)];
         </div>
 
         <!-- Google Analytics -->
-        <script>
+        <script> 
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -494,7 +506,7 @@ $next = $nexts[array_rand($nexts)];
 
         ga('create', 'UA-96948-13', 'whatthefuckshouldibeforhalloween.com');
         ga('send', 'pageview');
-
+        
         </script>
     </body>
 </html>
