@@ -1,444 +1,12 @@
 <?php
 
-$prompts = array(
-"Here's a fucking idea, go as a",
-"Be a fucking",
-"Dress up as a fucking",
-"Fuck everything else, go as a",
-"Fuck it, just go as a",
-"Fucking deal with it - you're going as a",
-"I can totally fucking see you as a",
-"Just go as a fucking",
-"Take 100mg of Fuckitol, then go as a",
-"Why not be a fucking",
-"Why not dress as a fucking",
-"Why the fuck not be a",
-"You fucking know you want to be a",
-"You should go as a fucking",
-"You would make a fucking perfect",
-"You would make the best fucking",
-"You'd better fucking go as a",
-);
+require_once('SuggestionGenerator.php');
 
-$nexts = array(
-"Ain't happenin' cap'n!",
-"And lose my job? No way!",
-"Are you kidding me?",
-"At a work function? No way!",
-"Bummer! Amazon's sold out already.",
-"C'mon, I'm looking for something original!",
-"Have you seen me? I can't pull that off!",
-"I could never pull that off.",
-"I don't have the pieces for that costume.",
-"I don't swing that way.",
-"I don't think I could pull off the accent.",
-"I'm too shy to pull that off.",
-"In my country, you get arrested for that kind of thing.",
-"In these shoes? As if...",
-"Just like everyone else?",
-"Maybe next year.",
-"My mother would never let me.",
-"My sister is already using that costume!",
-"No no, that won't do at all.",
-"Not on your life!",
-"Not sexy enough.",
-"That won't work with my figure.",
-"Two years in a row? Fat chance!",
-"Umm, I don't think I'm old enough.",
-"What kind of person do you take me for!",
-"Who do you think I am!",
-);
+$generator = new SuggestionGenerator();
 
-$adjectives = array(
-"amorous",
-"bawdy",
-"depraved",
-"engorged",
-"erotic",
-"exotic",
-"explicit",
-"filthy",
-"flirtatious",
-"immoral",
-"indecent",
-"kinky",
-"lecherous",
-"lewd",
-"licentious",
-"lusty",
-"obscene",
-"perverted",
-"pornographic",
-"profane",
-"provocative",
-"racy",
-"rakish",
-"raunchy",
-"risquÉ",
-"salacious",
-"saucy",
-"seductive",
-"sensual",
-"sensuous",
-"sexual",
-"sexy",
-"slutty",
-"smutty",
-"steamy",
-"suggestive",
-"titillating",
-"x-rated",
-//"hot", // Too literal
-);
+$suggestion = $generator->getSuggestion();
 
-$nouns = array(
-"1945 Liberty Half-Dollar",
-"2001 Sri Lankan general election",
-"500 thread-count fitted sheet",
-"Band-Aid",
-"Berlin Wall",
-"California roll",
-"Cheese plate",
-"Crab Nebula",
-"Cuban Missile Crisis",
-"Death Star",
-"Eames Lounger",
-"Fort Knox",
-"George Foreman grill",
-"Goodyear Blimp",
-"Halley's Comet",
-"Hammond organ",
-"Hippodrome",
-"Hoover Dam",
-"Hubble Space Telescope",
-"Iron Curtain",
-"JELLO pudding pop",
-"Kitchenaid mixer",
-"Kyoto Protocol",
-"LEGO set",
-"Lake Superior",
-"Lay-Z-Boy sectional",
-"Leaning Tower of Pisa",
-"Little Dipper",
-"Mom n' Pop leather repair business",
-"Mona Lisa",
-"Mount Olympus",
-"Mount Rushmore",
-"National Park",
-"New York Subway System",
-"Pope Alexander VI",
-"Rorschach test",
-"Stevia packet",
-"Stonehenge",
-"Tupperware lid",
-"UPC barcode",
-"UPS truck",
-"US Treasury Bond",
-"United States 112th Congress",
-"VHS cassette",
-"Vespa",
-"WWII memorabilia",
-"Walmart",
-"Zune",
-"air freshener",
-"aircraft carrier",
-"ambulance",
-"anaconda-sized slug",
-"aphid",
-"apple fritter",
-"apple",
-"armoire",
-"athlete's foot spray",
-"autoharp",
-"baby crib",
-"bagel bite",
-"bagpipe",
-"balalaika",
-"ball bearing",
-"bamboo shoot",
-"bar stool",
-"barge",
-"beehive",
-"beet",
-"bell pepper",
-"bible",
-"bingo card",
-"biscuit",
-"bitcoin wallet",
-"blackhole",
-"blender",
-"blimp",
-"blogging platform",
-"blunderbuss",
-"bonbon",
-"botany experiment",
-"bounced check",
-"bowling shoe",
-"bratwurst",
-"brisket",
-"burrito",
-"bus pass",
-"bus",
-"bush",
-"business memo",
-"cactus",
-"can of soup",
-"car wash",
-"carrot person from veggieland",
-"carrot person",
-"cashew",
-"catalog of patents",
-"catcher's mit",
-"cello",
-"cheese danish",
-"chemistry set",
-"chicken dinner",
-"chimney",
-"chip clip",
-"chop salad",
-"christmas ham",
-"citrus zester",
-"cloud backup solution",
-"cloud",
-"coffee bean",
-"coin operated laundromat",
-"colander",
-"conch shell",
-"cookie",
-"corn combine",
-"corrugated cardboard box",
-"crab apple",
-"crib",
-"cribbage peg",
-"crumpet",
-"cucumber",
-"cummerbund",
-"cup 'o noodles",
-"cupcake",
-"curly fry",
-"daiquiri",
-"deviled egg",
-"door knob",
-"door stopper",
-"doorbell",
-"double-decker bus",
-"drain clogged with your roommate's hair",
-"dump truck",
-"durian fruit",
-"ear lobe",
-"ebola monkey",
-"fig newton",
-"fingernail clipper",
-"fire hose",
-"firetruck",
-"fishing lure",
-"flapjack",
-"flugelhorn",
-"fog horn",
-"forklift",
-"fortune cookie",
-"fractal",
-"frigate",
-"fruit fly",
-"fruit salad",
-"garbage pail",
-"garden hose",
-"ginger snap",
-"giraffe",
-"gold ingot",
-"goose lamp",
-"government contract",
-"grand canyon",
-"grandfather clock",
-"granite countertop",
-"grapefruit",
-"grommet",
-"hangnail",
-"helicoptor landing pad",
-"hospital bed",
-"hot melt glue gun",
-"hot pocket",
-"ice cream cone",
-"igloo",
-"imaginary number",
-"impressionist painting",
-"infant's car seat",
-"ink blot",
-"inkjet printer",
-"intramural sport",
-"ironing board",
-"jalopy",
-"jellybean",
-"labor movement",
-"labratory rat",
-"large hadron collider",
-"late model Ford Bronco",
-"lawnmower",
-"leaf blower",
-"lemon slice",
-"lemon wedge",
-"liberty bell",
-"lobster",
-"locomotive",
-"lox spread",
-"lozenge",
-"luxury yacht",
-"lymph node",
-"macaroon",
-"mason jar",
-"mastiff",
-"mathematics textbook",
-"mechanical pencil",
-"mermaid egg",
-"microplankton",
-"model train",
-"mongoose",
-"monorail",
-"moose",
-"mop",
-"mouse ball",
-"muffin",
-"nacho",
-"neo-victorian spice rack",
-"nicotine patch",
-"non-fiction short story",
-"nose-hair trimmer",
-"nutritional supplement",
-"one room schoolhouse",
-"onion ring",
-"online marketplace",
-"organic tofu cube",
-"packing peanut",
-"pair of britches",
-"pancake",
-"pantsuit",
-"panzer tank",
-"paradigm",
-"pencil shaving",
-"penny candy",
-"pepper mill",
-"pet door",
-"pickle",
-"pile driver",
-"pinto bean",
-"plate glass window",
-"playmobil set",
-"plunger",
-"pork barrel",
-"pork bun",
-"pork dumpling",
-"pot roast",
-"potato",
-"power washer",
-"presidential library",
-"proof of insurance",
-"purple heart",
-"puzzle piece",
-"radish",
-"raisin",
-"rat king",
-"red vine",
-"rice cooker",
-"rolodex",
-"salad",
-"sausage",
-"science fair project",
-"sea barnacle",
-"sewage treatment plant",
-"sherman's march to the sea",
-"side of ranch",
-"ski lift",
-"slinky",
-"slug-sized anaconda",
-"small business loan",
-"smoke signal",
-"software business",
-"soup bread-bowl",
-"sperm whale",
-"spice rack",
-"sponge",
-"spoon collection",
-"squash",
-"staple remover",
-"statuette",
-"steamroller",
-"stick figure",
-"stop sign",
-"stick of string cheese",
-"strip mine",
-"subway train",
-"suction cup",
-"super quesadilla",
-"tadpole",
-"taquito",
-"thanksgiving turkey",
-"tikki lamp",
-"toaster",
-"toe",
-"toilet",
-"tongs",
-"top ramen",
-"tow truck",
-"tractor",
-"train",
-"tram",
-"tuba",
-"turnip",
-"typewriter",
-"union strike",
-"utility belt",
-"viola da gamba",
-"waffle",
-"wagon wheel",
-"walnut",
-"walrus",
-"water bill",
-"weasel",
-"webinar",
-"white wine reduction",
-"wiffle ball",
-"wildebeest",
-"windmill",
-"wine rack",
-"winnebago",
-"wombat",
-"wormhole",
-"xylophone",
-"yogurt container",
-"zamboni",
-"zebra",
-"zeppelin",
-"zither",
-);
-
-$noun = $nouns[array_rand($nouns)];
-$adjective = $adjectives[array_rand($adjectives)];
-$costume = mb_strtoupper($adjective . ' ' . $noun);
-
-$prompt = $prompts[array_rand($prompts)];
-$next = $nexts[array_rand($nexts)];
-
-$request = substr( $_SERVER['REQUEST_URI'],1 );
-$params = explode( "/", $request );
-
-
-if($params[0] == 'api')
-{
-    $api = new stdClass();
-    $api->prompt  = $prompt;
-    $api->costume = $costume;
-    $api->next    = $next;
-    if(isset($params[1]) && $params[1] == 'clean')
-    {
-        foreach ($api as $key => $value) {
-            $api->$key = str_ireplace('fuck', 'f**k', $value);
-        }
-    }
-    echo json_encode($api);
-    exit;
-}
 ?>
-
 <html>
     <head>
         <meta charset="utf-8" />
@@ -459,6 +27,7 @@ if($params[0] == 'api')
                 height: 100%;
                 margin: 0 auto -285px; /* the bottom margin is the negative value of the footer's height plus margin */
             }
+            #costume { text-transform: uppercase; }
             #footer, #push {
                 margin-top: 100px;
                 height: 185px; /* .push must be the same height as .footer */
@@ -479,9 +48,9 @@ if($params[0] == 'api')
 
         <!-- The actual content -->
         <div class='wrapper'>
-            <h2><?php echo $prompt; ?>...</h2>
-            <h1><?php echo $costume; ?></h1>
-            <a href='.' id='next'><?php echo $next; ?> Give me another idea.</a>
+            <h2 id='prompt'><?php echo $suggestion->prompt; ?>...</h2>
+            <h1 id='costume'><?php echo $suggestion->costume; ?></h1>
+            <a href='.' id='next' id='next' onClick="refresh(); return false;"><?php echo $suggestion->next; ?> Give me another idea.</a>
             <div id='push'></div>
         </div>
 
@@ -495,7 +64,7 @@ if($params[0] == 'api')
 
 
             <!-- Twitter -->
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://whatthefuckshouldibeforhalloween.com/" data-text="I'm going as a <?php echo $costume; ?> for halloween thanks to">Tweet</a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://whatthefuckshouldibeforhalloween.com/" data-text="I'm going as a <?php echo $suggestion->costume; ?> for halloween thanks to">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
             <br />
@@ -505,15 +74,34 @@ if($params[0] == 'api')
         </div>
 
         <!-- Google Analytics -->
-        <script> 
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script type="text/javascript">
 
-        ga('create', 'UA-96948-13', 'whatthefuckshouldibeforhalloween.com');
-        ga('send', 'pageview');
-        
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-96948-13']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+
+        </script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            // Track jQuery AJAX calls with Analytics
+            jQuery(document).ajaxComplete(function(e, xhr, settings){
+                var d = document.location.pathname + document.location.search + document.location.hash;
+                _gaq.push(['_trackPageview', d]);
+            });
+
+            function refresh() {
+                $.getJSON( "api.php", function( data ) {
+                    $("#next").html( data.next );
+                    $("#prompt").html( data.prompt );
+                    $("#costume").html( data.costume );
+                });
+            }
         </script>
     </body>
 </html>
