@@ -16,6 +16,7 @@ $suggestion = $generator->getSuggestion();
             html, body { height: 100%; }
             body { text-align: center; font-family: Arial, Helvetica, sans-serif; }
             a:link, a:visited { color: blue; }
+            a:active { text-decoration: none; }
             h1,h2 { margin-bottom: 100px; }
             h1 { font-size: 60px; }
             h2 { font-size: 35px; padding-top: 100px; }
