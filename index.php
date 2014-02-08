@@ -107,7 +107,7 @@ $suggestion = $generator->getSuggestion();
                 // If we don't have any suggestions, wait
                 if(suggestions.length == 0)
                 {
-                    setTimeout(populate, 100);
+                    setTimeout(refresh, 100);
                     return;
                 }
                 suggestion = suggestions.pop();
