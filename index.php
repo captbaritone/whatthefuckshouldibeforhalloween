@@ -89,17 +89,12 @@ $suggestion = $generator->getSuggestion();
         </script>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" charset="utf-8">
-            // Track jQuery AJAX calls with Analytics
-            jQuery(document).ajaxComplete(function(e, xhr, settings){
-                var d = document.location.pathname + document.location.search + document.location.hash;
-                _gaq.push(['_trackPageview', d]);
-            });
-
             function refresh() {
                 $.getJSON( "api.php", function( data ) {
                     $("#next").html( data.next );
                     $("#prompt").html( data.prompt );
                     $("#costume").html( data.costume );
+                    _gaq.push(['_trackPageview']);
                 });
             }
         </script>
