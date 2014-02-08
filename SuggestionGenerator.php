@@ -432,4 +432,13 @@ class SuggestionGenerator
         return $suggestion;
     }
 
+
+    public function getCleanSuggestion()
+    {
+        $suggestion = $this->getSuggestion();
+        // Only the prompt contains the word "fuck"
+        $suggestion->prompt = str_ireplace('fuck', 'f**k', $suggestion->prompt);
+        return $suggestion;
+    }
+
 }

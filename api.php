@@ -2,17 +2,22 @@
 
 require_once('SuggestionGenerator.php');
 
+$count = (int)$_GET['count'] ?: 1;
+
+// Some limitaitons
+if($count > 50) die("Please request fewer than 50 suggestions");
+
 $generator = new SuggestionGenerator();
 
-$suggestion = $generator->getSuggestion();
-
-$request = substr( $_SERVER['REQUEST_URI'],1 );
-$params = explode( "/", $request );
-
-if(isset($params[1]) && $params[1] == 'clean')
-{
-    foreach ($suggestion as $key => $value) {
-        $suggestion->$key = str_ireplace('fuck', 'f**k', $value);
+$suggestions = array();
+for ($i = 0; $i < $count; $i++) {
+    if($_GET['clean'])
+    {
+        $suggestion[] = $generator->getCleanSuggestion();
+    }
+    else
+    {
+        $suggestion[] = $generator->getSuggestion();
     }
 }
 

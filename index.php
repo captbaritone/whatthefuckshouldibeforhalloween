@@ -89,13 +89,34 @@ $suggestion = $generator->getSuggestion();
         </script>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" charset="utf-8">
-            function refresh() {
-                $.getJSON( "api.php", function( data ) {
-                    $("#next").html( data.next );
-                    $("#prompt").html( data.prompt );
-                    $("#costume").html( data.costume );
-                    _gaq.push(['_trackPageview']);
+
+            // This will let us load future suggestions asynchronously in batches.
+            // If js is not supported, it should fall back to simply reloading the page
+            var suggestions = [];
+
+            function getSuggestions() {
+                $.getJSON( "api.php?count=10", function( data ) {
+                    suggestions = suggestions.concat( data );
                 });
+            }
+
+            // Grab some suggestions right away
+            getSuggestions();
+
+            function refresh() {
+                // If we don't have any suggestions, wait
+                if(suggestions.length == 0)
+                {
+                    setTimeout(populate, 100);
+                    return;
+                }
+                suggestion = suggestions.pop();
+                $("#next").html( suggestion.next );
+                $("#prompt").html( suggestion.prompt );
+                $("#costume").html( suggestion.costume );
+                _gaq.push(['_trackPageview']);
+
+                if(suggestions.length < 5) getSuggestions();
             }
         </script>
     </body>
