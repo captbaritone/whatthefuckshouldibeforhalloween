@@ -256,7 +256,7 @@ class SuggestionGenerator
         "grapefruit",
         "grommet",
         "hangnail",
-        "helicoptor landing pad",
+        "helicopter landing pad",
         "hospital bed",
         "hot melt glue gun",
         "hot pocket",
