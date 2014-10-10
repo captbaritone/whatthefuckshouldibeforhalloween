@@ -228,7 +228,6 @@ class SuggestionGenerator
         "dump truck",
         "durian fruit",
         "ear lobe",
-        "ebola monkey",
         "fig newton",
         "fingernail clipper",
         "fire hose",
