@@ -190,7 +190,7 @@ class SuggestionGenerator
         "carrot person",
         "cashew",
         "catalog of patents",
-        "catcher's mit",
+        "catcher's mitt",
         "cello",
         "cheese danish",
         "chemistry set",
