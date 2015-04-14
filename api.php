@@ -2,7 +2,7 @@
 
 require_once('SuggestionGenerator.php');
 
-$count = $_GET['count'] ? (int)$_GET['count'] : 1;
+$count = isset($_GET['count']) ? (int)$_GET['count'] : 1;
 
 // Some limitaitons
 if($count > 50) die("Please request fewer than 50 suggestions");
@@ -11,7 +11,7 @@ $generator = new SuggestionGenerator();
 
 $suggestions = array();
 for ($i = 0; $i < $count; $i++) {
-    if($_GET['clean'])
+    if(isset($_GET['clean']))
     {
         $suggestion[] = $generator->getCleanSuggestion();
     }
