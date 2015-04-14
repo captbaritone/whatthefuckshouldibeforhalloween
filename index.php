@@ -74,7 +74,7 @@ $suggestion = $generator->getSuggestion();
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
             <br />
-            By: <a href='http://blog.classicalcode.com/'>Jordan</a> (<a href='https://twitter.com/captbaritone'>@captbaritone</a>)
+            By: <a href='http://jordaneldredge.com/'>Jordan</a> (<a href='https://twitter.com/captbaritone'>@captbaritone</a>)
             <br />
             Apologies to <a href='http://whatthefuckshouldimakefordinner.com' target='_blank'>whatthefuckshouldimakefordinner.com</a>
         </div>
