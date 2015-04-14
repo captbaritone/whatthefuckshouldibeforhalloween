@@ -10,6 +10,11 @@ $suggestion = $generator->getSuggestion();
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta property="fb:admins" content="captbaritone">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://whatthefuckshouldibeforhalloween.com/">
+        <meta property="og:title" content="What The Fuck Should I Be For Halloween?">
+        <meta property="og:image" content="http://i.imgur.com/JCW6YIY.png">
         <title>What The Fuck Should I Be For Halloween?</title>
         <style>
             * { margin: 0; }
