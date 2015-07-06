@@ -39,7 +39,7 @@
         <div class='wrapper'>
             <h2 id='prompt'></h2>
             <h1 id='costume'></h1>
-            <a href='.' id='next' id='next' onClick="return refresh(true);"></a>
+            <a href='.' id='next' id='next' onClick="return refresh();"></a>
             <div id='push'></div>
         </div>
 
@@ -483,15 +483,15 @@
                 "zither"
             ];
 
-            function random(array) {
+            function roll(array) {
                 return array[Math.floor(Math.random()*array.length)];
             };
 
-            function refresh(log) {
-                document.getElementById("next").innerHTML = random(nexts);
-                document.getElementById('prompt').innerHTML = random(prompts);
-                document.getElementById("costume").innerHTML = random(adjectives) + ' ' + random(nouns);
-                if(log) _gaq.push(['_trackPageview']);
+            function refresh(e) {
+                document.getElementById("next").innerHTML = roll(nexts);
+                document.getElementById('prompt').innerHTML = roll(prompts);
+                document.getElementById("costume").innerHTML = roll(adjectives) + ' ' + roll(nouns);
+                _gaq.push(['_trackPageview']);
                 return false;
             }
             refresh();
