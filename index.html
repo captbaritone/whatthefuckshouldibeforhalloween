@@ -483,14 +483,28 @@
                 "zither"
             ];
 
+            var useAn = /^[aeiohx]/g;
+            function fixAn(prompt, adjective) {
+                if (
+                    prompt[prompt.length - 1] === "a" &&
+                    prompt[prompt.length - 2] === " " &&
+                    useAn.test(adjective)
+                ) {
+                    return prompt + 'n';
+                }
+                return prompt;
+            }
+
             function roll(array) {
-                return array[Math.floor(Math.random()*array.length)];
+                return array[Math.floor(Math.random() * array.length)];
             };
 
             function refresh(e) {
+                var adjective = roll(adjectives)
+                var prompt = fixAn(roll(prompts), adjective);
                 document.getElementById("next").innerHTML = roll(nexts);
-                document.getElementById('prompt').innerHTML = roll(prompts);
-                document.getElementById("costume").innerHTML = roll(adjectives) + ' ' + roll(nouns);
+                document.getElementById('prompt').innerHTML = prompt;
+                document.getElementById("costume").innerHTML = adjective + ' ' + roll(nouns);
                 _gaq.push(['_trackPageview']);
                 return false;
             }
